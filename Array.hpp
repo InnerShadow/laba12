@@ -1,4 +1,5 @@
 #pragma once
+
 #include "Objects.hpp"
 #include "../laba10/vector.hpp"
 
@@ -11,8 +12,8 @@ public:
     Array(const Array& other);
     Array(Array&& other);
     
-    Array& operator = (const Array &other);
-    Array& operator=(Array&& other);
+    Array& operator= (const Array &other);
+    Array& operator= (Array&& other);
 
     void remove(char* name);
 

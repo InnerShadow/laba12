@@ -55,13 +55,11 @@
 
     void Array::remove(char* name){
         int i = 0;
-        bool found = 0;
         for( ; i < arr.getsize(); i++){
             if(arr[i]->GetName() == name){
                 break;
             }
         }
-
 
         Array newArray = *this;
         arr.clean();
@@ -76,11 +74,14 @@
 
     void Array::Print() const {
         for(int i = 0; i < arr.getsize(); i++){
+            if(arr[i] == nullptr){
+                return;
+            }
             arr[i]->Print();
         }
     }
 
-    ostream& operator << (ostream &str, const Array& prototipe){
+    ostream& operator << (ostream& str, const Array& prototipe){
         prototipe.Print();
         return str;
     }

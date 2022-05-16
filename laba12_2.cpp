@@ -11,10 +11,6 @@ int main(){
     int isize = 0;
     cin >> isize;
     Array array(isize);
-    Appliances appliances;
-    Sportswear sportswear;
-    Outerwear outerwear;
-    Lingerie lingerie;
     for(int i = 0; i < isize; i++){
         cout << "Enter 2 for Appliances, 4 for Outerwear, 5 for Sportswear, 6 for Lingerie: ";
         int key = 0;
@@ -58,7 +54,7 @@ int main(){
                 cout << "Enter season of this cloath: ";
                 char* season = new char[256];
                 cin >> season;
-                Outerwear* temp = new Outerwear(name, price, units_left, matiral, size, season);
+                Outwear* temp = new Outwear(name, price, units_left, matiral, size, season);
                 array.Insert(temp, i);
                 delete[] season;
                 delete[] matiral;
@@ -103,7 +99,7 @@ int main(){
                 cout << "Enter size of this cloath: ";
                 int size = 0;
                 cin >> size;
-                Lingerie* temp = new Lingerie(name, price, units_left, matiral, size);
+                Underwear* temp = new Underwear(name, price, units_left, matiral, size);
                 array.Insert(temp, i);
                 delete[] matiral;
                 delete[] name;
@@ -111,7 +107,7 @@ int main(){
             }
         }
     }
-
+    
     array.Print();
     return 0;
 }
